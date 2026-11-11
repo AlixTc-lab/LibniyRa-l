@@ -1,0 +1,2893 @@
+/*======================================================
+1. VARIABLES
+======================================================*/
+:root {
+
+   
+    /* CHAMPAGNE */
+    --rosa: #8A9272;
+    --rosa-claro: #F7E7CE;
+    --rosa-fuerte: #707B59;
+    --pink: #78815F;
+
+    /* TONOS VERDE OLIVO */
+    --vino: #626B50;
+    --vino-claro: #8A9272;
+    --vino-suave: #A7AD91;
+
+    /* CHAMPAGNE Y BISQUE */
+    --lila: #D9C4A5;
+    --lila-claro: #F7E7CE;
+    --lila-fuerte: #C6A98A;
+
+    /* FONDOS */
+    --blanco: #FFFFFF;
+    --crema: #F4E8D8;
+
+    /* TEXTOS */
+    --titulo: #626B50;
+    --gris: #625D50;
+    --titulo-magico: #626B50;
+    --texto-oscuro: #3D4035;
+
+    /* COLORES COMPLEMENTARIOS */
+    --morado: #78815F;
+    --dorado: #C6A98A;
+
+    /* VARIABLES COMPLEMENTARIAS */
+    --negro: #3D4035;
+    --shadow: 0 15px 35px rgba(98,107,80,.15);
+
+    
+
+}
+
+/*======================================================
+2. RESET
+======================================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family: "Poppins", sans-serif;
+    color:var(--negro);
+    
+    background-image: url("fondo4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+
+/*======================================================
+3. HERO
+======================================================*/
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background-image:url("hero.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.15),
+        rgba(255,255,255,.20)
+    );
+
+    backdrop-filter: blur(0.1px);
+    -webkit-backdrop-filter: blur(0.1px);
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.detalle{
+
+    display:inline-block;
+
+    padding:10px 24px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(12px);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:130px;
+
+    font-weight:100;
+
+    color:var(--lila-claro);
+
+   
+
+    animation:fadeDown 2s;
+    
+
+}
+
+.linea{
+
+    width:140px;
+
+    height:2px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--rosa-fuerte),
+        var(--lila-fuerte),
+        transparent
+    );
+
+    margin:25px auto;
+
+}
+
+.hero p{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:32px;
+
+    color:var(--lila-claro);
+
+    letter-spacing:2px;
+
+    animation:fadeUp 2s;
+
+
+
+}
+
+
+
+
+.subtitulo-xv {
+    font-family: 'Cinzel', serif;
+    font-size: 70px; /* Tamaño grande para los XV */
+    color: var(--titulo-magico);
+    margin: 0;
+   
+
+    
+}
+
+.nombre {
+    font-family: "Great Vibes", cursive;
+    font-size: 130px;
+    color: var(--titulo);
+    font-weight: 100;
+
+
+
+
+    animation: fadeDown 2s;
+    margin: 0; /* Quitamos márgenes por defecto */
+    line-height: 1; /* Ajusta la altura de la línea para que no se separe de más */
+}
+
+
+
+/*======================================================
+4. CUENTA REGRESIVA
+======================================================*/
+
+.contador{
+
+    padding:120px 20px;
+
+    text-align:center;
+
+}
+
+.contenedor{
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+.subtitulo{
+
+     color:var(--titulo);
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.contador h2{
+
+    margin:15px 0;
+
+    font-size:52px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:var(--titulo);
+     
+
+}
+
+.texto-contador{
+
+    max-width:650px;
+
+    margin:0 auto 55px;
+
+    color:var(--titulo);
+
+}
+
+.countdown{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.tiempo{
+
+    background:
+        linear-gradient(
+            rgba(248,244,236,.30),
+            rgba(248,244,236,.30)
+        ),
+        url("fondo4.jpg")no-repeat center center/cover;
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.8);
+
+    border-radius:30px;
+
+    padding:35px 20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.tiempo:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.tiempo span{
+
+    display:block;
+
+    font-size:70px;
+
+    font-weight:700;
+
+    color:var(--titulo);
+
+    line-height:1;
+
+}
+
+.tiempo small{
+
+    display:block;
+
+    margin-top:15px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+    color:var(--titulo);
+
+}
+
+/*======================================================
+5. ANIMACIONES
+======================================================*/
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-60px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*======================================================
+6. RESPONSIVE
+======================================================*/
+
+@media(max-width:900px){
+
+.countdown{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+    height:100svh;
+
+}
+
+.hero h1{
+
+    font-size:82px;
+
+}
+
+.hero p{
+
+    font-size:24px;
+
+}
+
+.detalle{
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.contador{
+
+    padding:90px 20px;
+
+}
+
+.contador h2{
+
+    font-size:38px;
+
+}
+
+.countdown{
+
+    gap:15px;
+
+}
+
+.tiempo{
+
+    padding:25px 15px;
+
+}
+
+.tiempo span{
+
+    font-size:48px;
+
+}
+
+}
+
+
+/*======================================================
+GALERÍA
+======================================================*/
+
+.galeria {
+    padding: 120px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.titulo-seccion {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+
+.titulo-seccion span {
+    color: var(--titulo);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.titulo-seccion h2 {
+    margin-top:15px;
+    font-family:"Cormorant Garamond", serif;
+    font-size:55px;
+    color:var(--titulo);
+ 
+    
+}
+
+
+.titulo-seccion p {
+    margin-top:20px;
+    color:var(--titulo);
+    opacity:.8;
+}
+
+
+
+/*======================================================
+CARRUSEL GALERÍA
+======================================================*/
+
+
+.miGaleria{
+
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+
+    padding-bottom:70px;
+
+}
+
+
+.swiper-wrapper{
+
+    align-items:center;
+
+}
+
+
+.swiper-slide{
+
+    height:520px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:#0b132b;
+
+    transition:.4s ease;
+
+}
+
+
+.swiper-slide img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+/* efecto suave foto central */
+
+.swiper-slide-active{
+
+    transform:scale(1.02);
+
+}
+
+
+
+/* puntos */
+
+.swiper-pagination-bullet{
+
+    background:#FFD166;
+
+    opacity:.7;
+
+}
+
+
+.swiper-pagination-bullet-active{
+
+    width:28px;
+
+    border-radius:10px;
+
+    opacity:1;
+
+}
+
+
+
+/*======================================================
+TABLET
+======================================================*/
+
+
+@media(max-width:900px){
+
+    .miGaleria{
+
+        max-width:95%;
+
+    }
+
+
+    .swiper-slide{
+
+        height:420px;
+
+    }
+
+}
+
+
+
+/*======================================================
+CELULAR
+======================================================*/
+
+
+@media(max-width:600px){
+
+
+    .titulo-seccion h2{
+
+        font-size:40px;
+
+    }
+
+
+    .miGaleria{
+
+        max-width:100%;
+
+        padding-bottom:50px;
+
+    }
+
+
+    .swiper-slide{
+
+        height:330px;
+
+        border-radius:20px;
+
+    }
+
+
+    .swiper-slide-active{
+
+        transform:scale(1);
+
+    }
+
+
+}
+
+
+
+/*======================================================
+PANTALLAS GRANDES
+======================================================*/
+
+
+@media(min-width:1400px){
+
+
+    .miGaleria{
+
+        max-width:1200px;
+
+    }
+
+
+    .swiper-slide{
+
+        height:560px;
+
+    }
+
+}
+
+/*======================================================
+FLECHAS DE NAVEGACIÓN SWIPER
+======================================================*/
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #FFD166 !important; /* Color de la flecha (combina con tus puntos) */
+    background: rgba(11, 19, 43, 0.6); /* Fondo oscuro translúcido */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+/* Cambiar tamaño del ícono interno de la flecha */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Efecto al pasar el mouse por encima */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(11, 19, 43, 0.9);
+    transform: scale(1.1);
+}
+
+/* Opcional: Ocultar flechas en celulares pequeños para que no estorben */
+@media(max-width: 600px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
+
+/*======================================================
+LUGARES
+======================================================*/
+
+
+.lugares{
+
+    padding:120px 20px;
+
+}
+
+
+
+.lugares-container{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+    
+
+}
+
+
+
+.lugar-card{
+  background:
+        linear-gradient(
+            rgba(248,244,236,.30),
+            rgba(248,244,236,.30)
+        ),
+        url("fondo4.jpg")no-repeat center center/cover;
+
+   
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(255,255,255,.8);
+
+    transition:.4s;
+
+}
+
+
+
+
+
+
+
+
+
+
+.imagen-lugar{
+
+    height:330px;
+
+    overflow:hidden;
+
+}
+
+
+
+.imagen-lugar img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+
+
+.lugar-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+.info-lugar{
+
+    text-align:center;
+
+    padding:35px 30px 40px;
+
+}
+
+
+
+.icono{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--rosa),
+
+        var(--lila)
+
+    );
+
+    font-size:28px;
+
+}
+
+
+
+.info-lugar h3{
+
+   
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:38px;
+
+    color:var(--titulo);
+
+    
+}
+
+
+
+.info-lugar p{
+
+    line-height:1.8;
+
+    color:var(--titulo);
+
+    margin-bottom:15px;
+      
+}
+
+
+
+/* Botón */
+
+.btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:20px;
+
+    padding:14px 35px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        var(--titulo),
+        var(--titulo)
+    );
+
+
+    transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 25px rgba(181,154,232,.35);
+
+}
+
+
+
+/* Responsive */
+
+
+@media(max-width:900px){
+
+
+.lugares-container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.imagen-lugar{
+
+    height:250px;
+
+}
+
+
+.info-lugar h3{
+
+    font-size:32px;
+
+}
+
+
+}
+
+/*======================================================
+PADRES Y PADRINOS
+======================================================*/
+
+
+.familia{
+
+    padding:120px 20px;
+
+    position:relative;
+
+}
+
+
+
+.familia-contenedor{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+
+
+.familia-card{
+
+     position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(248,244,236,.30),
+            rgba(248,244,236,.30)
+        ),
+        url("fondo4.jpg")no-repeat center center/cover;
+
+    backdrop-filter:blur(18px);
+
+    border-radius:35px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(255,255,255,.8);
+
+    
+    transition:.4s;
+       z-index: 1;
+
+}
+
+
+
+.familia-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+
+
+.decoracion{
+
+    width:65px;
+
+    height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--titulo),
+
+        var(--titulo)
+
+    );
+
+    color:white;
+
+    font-size:30px;
+
+}
+
+
+
+.familia-card h3{
+
+    margin:25px 0 35px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:42px;
+
+    color:var(--titulo);
+
+   
+
+}
+
+
+
+.persona span{
+
+    font-size:20px;
+
+    color:var(--titulo);
+
+   
+}
+
+
+
+.persona h4{
+
+    margin-top:10px;
+
+    font-size:25px;
+
+    font-weight:500;
+
+    color:var(--titulo);
+ 
+}
+
+
+
+.persona p{
+
+    margin-top:5px;
+
+    color:var(--titulo);
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+   
+}
+
+
+
+.separador{
+
+    width:80px;
+
+    height:2px;
+
+    margin:25px auto;
+
+    background:linear-gradient(
+
+        to right,
+
+        var(--rosa-fuerte),
+
+        var(--lila-fuerte)
+
+    );
+
+}
+
+
+
+
+/* Responsive */
+
+
+@media(max-width:850px){
+
+.familia-contenedor{
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+@media(max-width:600px){
+
+.familia-card h3{
+
+    font-size:35px;
+
+}
+
+.persona h4{
+
+    font-size:22px;
+
+}
+
+}
+
+/*======================================================
+MESA DE REGALOS
+======================================================*/
+
+
+.regalos{
+
+    padding:120px 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    position:relative;
+
+}
+
+
+
+
+.regalos-card {
+    position:relative;
+    overflow:hidden;
+
+    max-width:750px;
+    width:100%;
+    text-align:center;
+
+    padding:70px 50px;
+
+    background:
+        linear-gradient(
+            rgba(248,244,236,.30),
+            rgba(248,244,236,.30)
+        ),
+        url("fondo4.jpg")no-repeat center center/cover;
+
+    border-radius:45px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(255,255,255,.8);
+}
+
+
+
+
+
+
+.regalo-icono{
+
+    width:90px;
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    font-size:45px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--rosa),
+
+        var(--lila)
+
+    );
+
+    box-shadow:0 10px 25px rgba(181,154,232,.25);
+
+}
+
+
+
+.regalos-card .subtitulo{
+
+    display:block;
+
+    margin-top:35px;
+
+}
+
+
+
+.regalos-card h2{
+
+    margin:15px 0 25px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:60px;
+
+    color:var(--titulo);
+
+
+}
+
+
+
+.regalos-card p{
+
+    max-width:550px;
+
+  
+
+    line-height:1.9;
+
+    color:var(--titulo);
+
+    font-size:17px;
+
+     margin:15px 0 25px;
+    
+
+}
+
+
+
+.btn-regalo{
+
+    display:inline-flex;
+
+    margin-top:40px;
+
+    padding:16px 45px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        var(--titulo),
+        var(--titulo)
+    );
+
+    transition:.35s;
+
+}
+
+
+
+.btn-regalo:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(181,154,232,.35);
+
+}
+
+
+
+.decoracion-regalo{
+
+    margin-top:35px;
+
+    color:var(--titulo);
+
+    font-size:25px;
+
+    letter-spacing:12px;
+
+}
+
+
+
+/* Responsive */
+
+
+@media(max-width:600px){
+
+
+.regalos-card{
+
+    padding:50px 25px;
+
+}
+
+
+.regalos-card h2{
+
+    font-size:42px;
+
+}
+
+
+.regalos-card p{
+
+    font-size:15px;
+
+}
+
+
+}
+
+/*======================================================
+CONFIRMACION
+======================================================*/
+
+
+.confirmacion{
+
+    padding:120px 20px;
+
+}
+
+
+
+.acciones-evento{
+
+    max-width:1000px;
+
+    margin:60px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+
+
+.accion-card {
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            rgba(248,244,236,.30),
+            rgba(248,244,236,.30)
+        ),
+        url("fondo4.jpg")           no-repeat center center/cover;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(255,255,255,.8);
+}
+
+
+
+
+
+
+.accion-icono{
+
+    width:80px;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    font-size:38px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--rosa),
+
+        var(--lila)
+
+    );
+
+}
+
+
+
+.accion-card h3{
+
+    margin:25px 0 15px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:35px;
+
+    color:var(--titulo);
+   
+
+}
+
+
+
+.accion-card p{
+
+   margin:25px 0 15px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:20px;
+
+    color:var(--titulo);
+    
+  
+
+   
+}
+
+
+
+/* FORMULARIO */
+
+
+.formulario-card{
+
+    max-width:650px;
+
+    margin:70px auto 0;
+
+    padding:45px;
+
+    background:
+        linear-gradient(
+            rgba(248,244,236,.30),
+            rgba(248,244,236,.30)
+        ),
+        url("fondo4.jpg")           no-repeat center center/cover;
+
+   
+
+    border-radius:35px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.formulario-card h3{
+
+    text-align:center;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:40px;
+
+    color:var(--titulo);
+
+    margin-bottom:30px;
+ 
+
+}
+
+
+
+#formConfirmacion{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+
+#formConfirmacion input,
+#formConfirmacion select,
+#formConfirmacion textarea{
+
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border-radius:20px;
+
+    border:1px solid #eadcf5;
+
+    background:#fff;
+
+    font-family:Poppins;
+
+    outline:none;
+
+
+}
+
+
+
+#formConfirmacion textarea{
+
+    min-height:120px;
+
+    resize:none;
+
+}
+
+
+
+#formConfirmacion input:focus,
+#formConfirmacion select:focus,
+#formConfirmacion textarea:focus{
+
+    border-color:var(--lila-fuerte);
+
+}
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:800px){
+
+
+.acciones-evento{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.formulario-card{
+
+    padding:30px 20px;
+
+}
+
+
+}
+
+/*======================================================
+QR FOTOS
+======================================================*/
+
+
+.fotos-qr{
+
+    padding:120px 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+
+.qr-card{
+
+    max-width:700px;
+
+    width:100%;
+
+    text-align:center;
+
+    padding:65px 45px;
+
+    background:
+        linear-gradient(
+            rgba(248,244,236,.30),
+            rgba(248,244,236,.30)
+        ),
+        url("fondo4.jpg")           no-repeat center center/cover;
+
+  
+
+    border-radius:45px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(255,255,255,.8);
+
+}
+
+
+
+
+
+.qr-icono{
+
+    width:85px;
+
+    height:85px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    font-size:40px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--rosa),
+
+        var(--lila)
+
+    );
+
+}
+
+
+
+.qr-card span{
+
+    display:block;
+
+    margin-top:35px;
+
+    color:var(--titulo);
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    font-weight:600;
+  
+}
+
+
+
+.qr-card h2{
+
+    margin:15px 0;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:55px;
+
+    color:var(--titulo);
+   
+}
+
+
+
+.qr-card p{
+
+    max-width:520px;
+
+    margin:25px auto 35px;
+
+    line-height:1.9;
+
+    color:var(--titulo);
+  
+}
+
+
+
+.qr-contenedor{
+
+    width:220px;
+
+    height:220px;
+
+    margin:30px auto;
+
+    padding:15px;
+
+    background:white;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 15px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.qr-contenedor img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+
+
+.qr-decoracion{
+
+    margin-top:35px;
+
+    color:var(--titulo);
+
+    font-size:25px;
+
+    letter-spacing:12px;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.qr-card{
+
+    padding:50px 25px;
+
+}
+
+
+.qr-card h2{
+
+    font-size:40px;
+
+}
+
+
+.qr-contenedor{
+
+    width:190px;
+
+    height:190px;
+
+}
+
+
+}
+
+/*======================================================
+CIERRE FINAL
+======================================================*/
+
+
+.cierre{
+
+    min-height:80vh;
+
+    padding:120px 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+  
+
+}
+
+
+
+.cierre-card{
+
+    max-width:750px;
+
+    width:100%;
+
+    text-align:center;
+
+    padding:70px 50px;
+
+    background:
+        linear-gradient(
+            rgba(248,244,236,.30),
+            rgba(248,244,236,.30)
+        ),
+        url("fondo4.jpg")           no-repeat center center/cover;
+
+    backdrop-filter:blur(20px);
+
+    border-radius:45px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(255,255,255,.8);
+
+    position:relative;
+
+}
+
+
+
+.flor{
+
+    width:80px;
+
+    height:80px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    font-size:40px;
+
+    color:white;
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--rosa-fuerte),
+
+        var(--lila-fuerte)
+
+    );
+
+}
+
+
+
+.cierre-card span{
+
+    display:block;
+
+    margin-top:35px;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    color:var(--titulo);
+   
+
+}
+
+
+
+.cierre-card h2{
+
+    margin:20px 0;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:65px;
+
+    color:var(--titulo);
+   
+}
+
+
+
+.cierre-card h3{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:80px;
+
+    font-weight:400;
+
+    color:var(--titulo);
+   
+}
+
+
+
+.cierre-card p{
+
+    max-width:550px;
+
+    margin:30px auto;
+
+    font-size:17px;
+
+    line-height:2;
+
+    color:var(--titulo);
+ 
+
+}
+
+
+
+.fecha-final{
+
+    margin-top:35px;
+      color:var(--blanco);
+
+    padding:15px 35px;
+
+    display:inline-block;
+
+    border-radius:50px;
+
+    background:#8B6B23;
+
+    letter-spacing:3px;
+
+}
+
+
+
+.decoracion-final{
+
+    margin-top:35px;
+
+    color:var(--titulo);
+
+    font-size:28px;
+
+    letter-spacing:15px;
+
+}
+
+
+
+/* Responsive */
+
+
+@media(max-width:600px){
+
+
+.cierre-card{
+
+    padding:50px 25px;
+
+}
+
+
+.cierre-card h2{
+
+    font-size:45px;
+
+}
+
+
+.cierre-card h3{
+
+    font-size:60px;
+
+}
+
+
+.cierre-card p{
+
+    font-size:15px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+.itinerario{
+
+    padding:120px 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    position:relative;
+
+}
+
+
+
+.itinerario::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:var(--rosa);
+
+    opacity:.25;
+
+    filter:blur(90px);
+
+    border-radius:50%;
+
+}
+
+
+
+.itinerario-card {
+    position:relative;
+    overflow:hidden;
+
+    max-width:750px;
+    width:100%;
+    text-align:center;
+
+    padding:70px 50px;
+
+    background:
+        linear-gradient(
+            rgba(248,244,236,.30),
+            rgba(248,244,236,.30)
+        ),
+        
+        url("fondo4.jpg") no-repeat center center/cover;
+
+    border-radius:45px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(255,255,255,.8);
+}
+
+
+
+
+
+.timeline{
+position:relative;
+margin-top:25px;
+padding:10px 0;
+}
+
+/* línea central */
+.timeline::before{
+content:"";
+position:absolute;
+width:2px;
+background:rgba(214,194,141,0.4);
+top:0;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+}
+
+/* item */
+.t-item{
+position:relative;
+width:50%;
+padding:10px 20px;
+}
+
+/* izquierda */
+.t-item.left{
+left:0;
+text-align:right;
+}
+
+/* derecha */
+.t-item.right{
+left:50%;
+text-align:left;
+}
+
+/* círculo */
+.circle{
+width:16px;
+height:16px;
+background:#d4af37;
+border-radius:50%;
+position:absolute;
+top:18px;
+box-shadow:0 0 12px rgba(212,175,55,0.7);
+}
+
+/* posición círculos */
+.t-item.left .circle{
+right:-8px;
+}
+
+.t-item.right .circle{
+left:-8px;
+}
+
+.itinerario h2{
+
+    font-size:55px;
+    color: var(--lila-claro);
+
+}
+
+
+.itinerario-card h3{
+
+    margin:15px 0 25px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:30px;
+
+    color:var(--lila-claro);
+
+    text-shadow:
+    0 2px 5px rgba(0,0,0,.8),
+    0 0 18px rgba(0,0,0,.5);
+
+}
+
+
+.itinerario-card p{
+
+    font: size 25px;
+    color: var(--lila-claro);
+    margin:15px 0 25px;
+    text-shadow:
+    0 2px 5px rgba(0,0,0,.8),
+    0 0 18px rgba(0,0,0,.5);
+
+}
+
+
+.luxury-footer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+
+    padding:28px 20px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-top:1px solid rgba(255,255,255,.35);
+}
+
+.luxury-footer .line{
+    width:80px;
+    height:1px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--rosa-fuerte),
+        var(--lila-fuerte),
+        transparent
+    );
+}
+
+.luxury-footer p{
+    margin:0;
+    color:var(--lila-claro);
+    font-size:.9rem;
+    text-shadow:
+    0 2px 5px rgba(0,0,0,.8),
+    0 0 18px rgba(0,0,0,.5);
+}
+
+.luxury-footer a{
+    color:var(--lila-claro);
+    font-weight:700;
+    text-decoration:none;
+    text-shadow:
+    0 2px 5px rgba(0,0,0,.8),
+    0 0 18px rgba(0,0,0,.5);
+}
+
+.luxury-footer a:hover{
+    color:var(--lila-claro);
+}
+.footer{
+    width:100%;
+    padding:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+}
+
+.footer p{
+    margin:0;
+    color:var(--lila-claro);
+    text-shadow:
+
+    0 2px 5px rgba(0,0,0,.8),
+    0 0 18px rgba(0,0,0,.5);
+}
+
+
+
+
+
+
+#music-btn{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+     background:var(--titulo);
+
+    color:white;
+
+    font-size:24px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+        0 10px 25px rgba(109,26,54,.35);
+
+    z-index:99999;
+
+    transition:.3s;
+
+}
+
+#music-btn:hover{
+
+    transform:scale(1.1);
+
+    background:VAR(--titulo);
+
+}
+
+
+
+
+/* ===== LUCIÉRNAGAS (VERSIÓN SEGURA) ===== */
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:9999; /* 🔥 ARRIBA DE TODO */
+}
+
+.star{
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    background:#fff;
+    border-radius:50%;
+
+    box-shadow:
+    0 0 5px #F2B6BE,
+    0 0 10px #A83A4A,
+    0 0 20px rgba(139, 38, 53, .9),
+    0 0 32px rgba(122, 32, 45, .65),
+    0 0 45px rgba(84, 21, 32, .4);
+
+    opacity:1; /* 🔥 IMPORTANTE */
+
+    animation: floatStar linear infinite;
+}
+
+/* movimiento */
+@keyframes floatStar{
+    0%{
+        transform: translateY(110vh);
+    }
+    100%{
+        transform: translateY(-120vh);
+    }
+}
+
+
+
+.seccion-imagen {
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+    box-sizing: border-box;
+}
+
+.seccion-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+    .seccion-imagen {
+        width: 96%;
+        margin: 25px auto;
+    }
+
+    .seccion-imagen img {
+        border-radius: 20px;
+    }
+}
+
+/* VIDEOS */
+video {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
+
+
+/*======================================================
+CODIGO DE VESTIMENTA
+======================================================*/
+
+
+.vestimenta{
+
+    padding:120px 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    position:relative;
+
+}
+
+
+
+.vestimenta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    background:var(--titulo);
+
+    opacity:.25;
+
+    filter:blur(90px);
+
+    border-radius:50%;
+
+}
+
+
+
+.vestimenta-card{
+
+    position:relative;
+
+    max-width:850px;
+
+    width:100%;
+
+    text-align:center;
+
+    padding:70px 50px;
+
+
+   background:
+        linear-gradient(
+            rgba(248,244,236,.30),
+            rgba(248,244,236,.30)
+        ),
+        url("fondo4.jpg")no-repeat center center/cover;
+
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:45px;
+
+
+    box-shadow:var(--shadow);
+
+
+    border:1px solid rgba(255,255,255,.8);
+
+
+}
+
+
+
+/* ICONO */
+
+.vestimenta-icono{
+
+    width:90px;
+
+    height:90px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    margin:auto;
+
+
+    border-radius:50%;
+
+
+    font-size:45px;
+
+
+    color:white;
+
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--titulo),
+
+        var(--titulo)
+
+    );
+
+
+    box-shadow:
+    0 10px 25px rgba(109,26,54,.25);
+
+
+}
+
+
+
+/* SUBTITULO */
+
+
+.vestimenta-card .subtitulo{
+
+    display:block;
+
+    margin-top:35px;
+
+    letter-spacing:5px;
+
+    color:var(--titulo);
+
+}
+
+
+
+
+/* TITULO */
+
+
+.vestimenta-card h2{
+
+
+    margin:15px 0 25px;
+
+
+    font-family:"Cormorant Garamond",serif;
+
+
+    font-size:60px;
+
+
+    color:var(--titulo);
+
+
+    display:inline-block;
+
+
+    padding:15px 35px;
+
+
+
+   
+
+
+}
+
+
+
+
+/* TEXTO */
+
+
+.descripcion-vestimenta{
+
+
+    max-width:550px;
+
+    margin:auto;
+
+
+    padding:20px 30px;
+
+
+    line-height:1.9;
+
+
+    color:var(--gris);
+
+
+    font: size 20px;
+
+
+    background:rgba(248,244,236,.75);
+
+
+    backdrop-filter:blur(8px);
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+
+/* OPCIONES */
+
+
+.vestimenta-opciones{
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(2,1fr);
+
+
+    gap:30px;
+
+
+    margin-top:45px;
+
+
+}
+
+
+
+.vestimenta-item{
+
+
+    padding:30px;
+
+
+    background:rgba(248,244,236,.65);
+
+
+    backdrop-filter:blur(8px);
+
+
+    border-radius:35px;
+
+
+    border:1px solid rgba(199,164,106,.30);
+
+
+}
+
+
+
+.vestimenta-item i{
+
+
+    font-size:45px;
+
+    color:var(--titulo);
+
+
+}
+
+
+
+.vestimenta-item h3{
+
+
+    font-family:"Cormorant Garamond",serif;
+
+
+    font-size:38px;
+
+
+    color:var(--titulo);
+
+
+}
+
+
+
+.vestimenta-item p{
+
+
+    color:var(--gris);
+
+    line-height:1.8;
+     font-size:20px;
+
+}
+
+
+
+
+.decoracion-vestimenta{
+
+
+    margin-top:35px;
+
+    color:var(--titulo);
+
+    font-size:25px;
+
+    letter-spacing:12px;
+
+}
+
+
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:600px){
+
+
+.vestimenta-card{
+
+    padding:50px 25px;
+
+}
+
+
+.vestimenta-card h2{
+
+    font-size:42px;
+
+}
+
+
+.vestimenta-opciones{
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
+
+.colores-evitar{
+
+    margin-top:25px;
+
+}
+
+.colores-evitar h4{
+
+    margin-bottom:20px;
+
+    color:var(--titulo);
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.paleta-colores{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+}
+
+.color-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.color{
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(199,164,106,.45);
+
+    box-shadow:0 6px 18px rgba(109,26,54,.12);
+
+}
+
+.color-item small{
+
+    margin-top:8px;
+
+    font-size:12px;
+
+    color:var(--gris);
+
+
+}
+
+.rojo{
+    background:#B22222;
+}
+
+
+.blanco{
+    background:#FFFFFF;
+}
+
+.ivory{
+    background:#FFFFF0;
+}
+
+.beige{
+    background:#F5F5DC;
+}
+
+.perla{
+    background:#E7E2DA;
+}
+
+.gift-image {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 600px) {
+    .gift-image {
+        max-width: 80px;
+    }
+}
