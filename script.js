@@ -46,6 +46,11 @@ FORMULARIO CONFIRMACION
 ======================================================*/
 
 
+/*======================================================
+FORMULARIO CONFIRMACION
+======================================================*/
+
+
 const URL_SCRIPT = 
 "https://script.google.com/macros/s/AKfycbw9TGDqPjkPtsP1CQGrSfa4xAR8u1Ax15bhxNWMxDaQHswr2G0dV0xoovO60oQF9qwX6A/exec";
 

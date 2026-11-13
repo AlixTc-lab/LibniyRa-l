@@ -517,6 +517,7 @@ GALERÍA
     margin-top:20px;
     color:var(--titulo);
     opacity:.8;
+     font-size: 20px;
 }
 
 
@@ -2735,7 +2736,7 @@ CODIGO DE VESTIMENTA
 .vestimenta-item p{
 
 
-    color:var(--gris);
+    color:var(--titulo);
 
     line-height:1.8;
      font-size:20px;
