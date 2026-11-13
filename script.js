@@ -46,79 +46,50 @@ FORMULARIO CONFIRMACION
 ======================================================*/
 
 
-/*======================================================
-FORMULARIO CONFIRMACION
-======================================================*/
 
-
-const URL_SCRIPT = 
+const URL_SCRIPT =
 "https://script.google.com/macros/s/AKfycbw9TGDqPjkPtsP1CQGrSfa4xAR8u1Ax15bhxNWMxDaQHswr2G0dV0xoovO60oQF9qwX6A/exec";
 
+const formulario = document.getElementById("formConfirmacion");
 
-const formulario =
-document.getElementById(
-"formConfirmacion"
-);
+formulario.addEventListener("submit", async function(e) {
 
+    e.preventDefault();
 
+    const datos = {
+        nombre: document.getElementById("nombre").value.trim(),
+        invitados: document.getElementById("invitados").value,
+        asistencia: document.getElementById("asistencia").value,
+        mensaje: document.getElementById("mensaje").value.trim()
+    };
 
-formulario.addEventListener(
-"submit",
-async function(e){
+    console.log("Datos enviados:", datos);
 
+    try {
 
-e.preventDefault();
+        await fetch(URL_SCRIPT, {
+            method: "POST",
+            mode: "no-cors",
+            body: JSON.stringify(datos)
+        });
 
+        alert("¡Gracias por confirmar tu asistencia! 💕");
 
+        formulario.reset();
 
-const datos={
+    } catch (error) {
 
+        console.error("Error:", error);
 
-nombre:
-document.getElementById("nombre").value,
+        alert("No se pudo enviar la confirmación.");
 
-
-invitados:
-document.getElementById("invitados").value,
-
-
-asistencia:
-document.getElementById("asistencia").value,
-
-
-mensaje:
-document.getElementById("mensaje").value
-
-
-};
-
-
-
-await fetch(
-URL_SCRIPT,
-{
-
-method:"POST",
-
-body:
-JSON.stringify(datos)
-
-}
-);
-
-
-
-alert(
-"¡Gracias por confirmar tu asistencia 💕!"
-);
-
-
-
-formulario.reset();
-
-
+    }
 
 });
+
+
+
+
 
 const music = document.getElementById("bg-music");
 const btn = document.getElementById("music-btn");
