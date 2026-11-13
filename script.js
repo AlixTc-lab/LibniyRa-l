@@ -47,7 +47,7 @@ FORMULARIO CONFIRMACION
 
 
 const URL_SCRIPT = 
-"https://script.google.com/macros/s/AKfycbzqIBV8qccC8ITV4Jsa21IYCmkSlMbuxSetgK4macTm9iIeBF3jmVZMWJa_3IYVuvUi/exec";
+"https://script.google.com/macros/s/AKfycbw9TGDqPjkPtsP1CQGrSfa4xAR8u1Ax15bhxNWMxDaQHswr2G0dV0xoovO60oQF9qwX6A/exec";
 
 
 const formulario =
