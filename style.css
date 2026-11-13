@@ -1809,7 +1809,14 @@ QR FOTOS
 
 }
 
-
+.qr-imagen {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 15px;
+}
 
 .qr-decoracion{
 
